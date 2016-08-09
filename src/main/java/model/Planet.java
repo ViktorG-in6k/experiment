@@ -19,6 +19,11 @@ public class Planet implements ICore{
         return core;
     }
 
+    public void setMassAndRadius(double mass, double radius){
+        this.mass = mass;
+        this.radius = radius;
+    }
+
     public void setCore(Core core) {
         this.core = core;
     }
@@ -47,5 +52,15 @@ public class Planet implements ICore{
     @Override
     public double getVolume() {
         return (4.0 / 3) * Math.PI * Math.pow(this.radius, 3);
+    }
+
+    @Override
+    public String toString() {
+        return "Planet{" +
+                "\n mass = " + mass +
+                ",\n radius = " + radius +
+                ",\n density = " + getDensity() +
+                ",\n volume = " + getVolume()+
+                "\n}";
     }
 }
